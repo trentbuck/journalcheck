@@ -21,6 +21,8 @@ import subprocess
 import tempfile
 
 
+# NOTE: the reason this is under /var/log/ is because, on Datasafe3,
+# it is the only part of the filesystem that is persistent across reboots.
 _TIMESTAMP_PATH = '/var/log/.last-journalcheck'
 
 

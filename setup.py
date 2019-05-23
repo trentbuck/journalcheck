@@ -9,7 +9,7 @@ setuptools.setup(
     # Ref. https://github.com/pypa/sampleproject
     entry_points={
         'console_scripts': [
-            'journalcheck=journalcheck.main'
+            'journalcheck=journalcheck:main'
         ]
     }
 )

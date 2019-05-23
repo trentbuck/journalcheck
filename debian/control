@@ -10,7 +10,7 @@ Rules-Requires-Root: no
 Package: python3-journalcheck
 Architecture: all
 Depends: ${misc:Depends}, ${python3:Depends}
-Recommends: logcheck-database
+Recommends: logcheck-database, bsd-mailx | mailutils
 Description: logcheck for single-host systemd-journald
  Logcheck reads log events from /var/log/syslog and /var/log/auth.log and emails
  you if any aren't boring.  Journalcheck does the same thing with

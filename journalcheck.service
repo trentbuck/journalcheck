@@ -1,0 +1,50 @@
+[Service]
+ExecStart=/usr/bin/journalcheck --save --to=root --summarize
+
+# Be polite about shared resources (CPU, RAM, I/O).
+Nice=10
+IOSchedulingClass=idle
+CPUSchedulingPolicy=idle
+MemoryHigh=128M
+
+# Be more secure.
+#
+# NOTE: PrivateNetwork=yes will break msmtp-mta.
+# NOTE: Without AF_NETLINK, postfix maildrop breaks.
+PrivateNetwork=no
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+
+# DynamicUser=yes or User=nobody don't Just Work.
+# I can't be arsed fixing this.
+User=root
+SupplementaryGroups=adm systemd-journal
+
+# These work when the local MSA is postfix.
+CapabilityBoundingSet=
+KeyringMode=private
+RestrictNamespaces=yes
+DevicePolicy=closed
+PrivateDevices=yes
+ProtectSystem=full
+PrivateMounts=yes
+PrivateTmp=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @resources
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RemoveIPC=yes
+UMask=077
+
+## These 3 together are tighter than ProtectSystem=full
+#ProtectSystem=strict
+#ReadWritePaths=-/var/log/.last-journalcheck /run/lock /tmp /var/spool/
+#ProtectHome=tmpfs
+
+# These don't work when the local MSA is postfix.
+#PrivateUsers=yes
+#NoNewPrivileges=yes
