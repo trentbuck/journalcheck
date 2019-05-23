@@ -1,0 +1,5 @@
+#! /usr/bin/make -f
+## NOTE: https://wiki.debian.org/Python/Pybuild
+export PYBUILD_NAME=journalcheck
+%:
+	dh $@ --with=python3 --buildsystem=pybuild

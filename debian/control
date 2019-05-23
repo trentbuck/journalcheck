@@ -1,0 +1,22 @@
+Source: journalcheck
+Section: python
+Priority: optional
+Maintainer: Trent W. Buck <twb@cyber.com.au>
+Uploaders: Trent W. Buck <trentbuck@gmail.com>
+Build-Depends: debhelper (>= 12), dh-python, python3
+Standards-Version: 4.3.0
+Rules-Requires-Root: no
+
+Package: python3-journalcheck
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Recommends: logcheck-database
+Description: logcheck for single-host systemd-journald
+ Logcheck reads log events from /var/log/syslog and /var/log/auth.log and emails
+ you if any aren't boring.  Journalcheck does the same thing with
+ /var/log/journal/ instead, making it simpler and smaller.
+ .
+ It does NOT have feature-parity with logcheck.
+ In particular, compared to rsyslog-relp,
+ systemd-journald is crap at centralizing logs from a large number of hosts.
+ This means journalcheck is a good choice for small, single-host deployments.

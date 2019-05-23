@@ -1,0 +1,6 @@
+journalcheck (0.0.20181016) UNRELEASED; urgency=medium
+
+  * Initial version.
+    Imported from bootstrap.git:datasafe3:2018-10-16.
+
+ -- Trent W. Buck <trentbuck@gmail.com>  Thu, 23 May 2019 17:43:59 +1000

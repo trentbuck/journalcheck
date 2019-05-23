@@ -1,0 +1,3 @@
+# This forces a persistent journal to exist, in case you forgot to do that yourself.
+# Without this, you only get about 8MB of journal in /run, which is (probably) not enough to handle a full day.
+var/log/journal
