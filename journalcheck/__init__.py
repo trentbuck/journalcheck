@@ -162,8 +162,10 @@ def pipeline(conf, pattern_paths):
 
 def parse_args():
     parser = argparse.ArgumentParser(
+        prog='journalcheck',
         description='Like logcheck(8), but read log events from the systemd journal (not syslog).'
         ' CRON EXAMPLE: @hourly root journalctl --save --to admin@example.com')
+    parser.add_argument('--version', action='version', version='%(prog)s 0.0.20190525')  # for help2man
     parser.add_argument('--file',
                         dest='pattern_paths',
                         metavar='PATH',

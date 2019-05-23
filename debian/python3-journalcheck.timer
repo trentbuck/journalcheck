@@ -17,7 +17,7 @@
 #
 # https://manpages.debian.org/stretch/systemd/systemd.time.7.en.html#PARSING_TIMESTAMPS
 [Timer]
-OnBootSec=1min
+OnStartupSec=1min
 OnCalendar=*-*-* 06:00:00
 
 [Install]

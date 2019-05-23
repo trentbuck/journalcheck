@@ -1,4 +1,4 @@
-journalcheck (0.0.20181016) UNRELEASED; urgency=medium
+journalcheck (0.0.20190825) UNRELEASED; urgency=medium
 
   * Initial version.
     Imported from bootstrap.git:datasafe3:2018-10-16.

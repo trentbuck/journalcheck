@@ -2,7 +2,7 @@
 import setuptools
 setuptools.setup(
     name='journalcheck',
-    version='1.0',
+    version='0.0.20190825',
     packages=['journalcheck'],
     # This makes /usr/bin/foo which are basically #!/bin/sh ↲ exec python3 -m foo "$@"
     # Ref. https://packaging.python.org/tutorials/distributing-packages/#console-scripts
